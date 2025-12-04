@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UniPortal | Smart Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#06b6d4;
+      --bg:#f4f6fb;
+      --dark:#0f172a;
+      --card:#ffffff;
+      --muted:#64748b;
+      --radius:18px;
+      --shadow:0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background:linear-gradient(180deg,#eef2ff,#f8fafc);
+      color:var(--dark);
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      background:linear-gradient(90deg,var(--primary),var(--secondary));
+      color:#fff;
+      padding:20px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:600;
+      opacity:0.9;
+    }
+
+    nav a:hover{opacity:1;text-decoration:underline;}
+
+    /* ===== HERO ===== */
+    .hero{
+      max-width:1100px;
+      margin:40px auto 20px;
+      text-align:center;
+      padding:0 16px;
+    }
+
+    .hero h1{
+      font-size:2.5rem;
+    }
+
+    .hero p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    /* ===== DASHBOARD GRID ===== */
+    .container{
+      max-width:1100px;
+      margin:30px auto;
+      padding:0 18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      transition:0.25s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:auto -100% 0 0;
+      height:5px;
+      background:linear-gradient(90deg,var(--primary),var(--secondary));
+    }
+
+    .card:hover{
+      transform:translateY(-6px) scale(1.01);
+    }
+
+    .title{
+      font-weight:700;
+      margin-bottom:12px;
+      font-size:1.1rem;
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 16px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .btn.alt{
+      background:#16a34a;
+      margin-left:8px;
+    }
+
+    /* ===== EVENTS ===== */
+    .event{
+      margin-top:10px;
+      padding:12px;
+      border-radius:12px;
+      background:#f1f5f9;
+      font-size:0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      margin-top:60px;
+      padding:24px;
+      text-align:center;
+      background:#0f172a;
+      color:#cbd5f5;
+      font-size:0.95rem;
+    }
+
+    footer span{color:#38bdf8;}
+  </style>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">UNI<span style="color:#38bdf8">PORTAL</span></div>
+  <nav>
+    <a href="#">Projects</a>
+    <a href="#">Meetings</a>
+    <a href="#">Forum</a>
+    <a href="#">Events</a>
+    <a href="#">Shops</a>
+    <a href="#">Assignments</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Smart University Student Portal 🎓</h1>
+  <p>Manage your projects, events, meetings and academic life — all in one place.</p>
+</section>
+
+<main class="container">
+  <div class="grid">
+
+    <div class="card">
+      <div class="title">⚡ Quick Actions</div>
+      <div class="muted">
+        Upload projects • Schedule meetings • Register events • View shops
+      </div>
+      <a class="btn" href="#">Projects</a>
+      <a class="btn alt" href="#">Meetings</a>
+    </div>
+
+    <div class="card">
+      <div class="title">📢 Announcements</div>
+      <ul class="muted">
+        <li>Internship Fair – Dec 5</li>
+        <li>Watchers Garden Movie Released</li>
+        <li>Campus Food Festival Today</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="title">🌦 Live Weather</div>
+      <div class="muted">University Campus</div>
+      <div class="event">26°C • Clear Sky</div>
+    </div>
+
+    <div class="card">
+      <div class="title">👨‍🏫 Teacher Contact</div>
+      <div class="muted">Attendance & Academic queries</div>
+      <a class="btn" href="mailto:teacher@example.edu">Email Teacher</a>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:30px">
+    <div class="title">🔥 Upcoming Events</div>
+
+    <div class="grid" style="margin-top:15px">
+      <div class="event">
+        🎉 Fresher Party — Dec 10 <br>
+        <a class="btn" href="#">Register</a>
+      </div>
+
+      <div class="event">
+        🤖 AI & ML Seminar — Dec 2 <br>
+        <a class="btn" href="#">View Details</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  UniPortal Dashboard • Built by <span>SYROSA</span> • Group Project – 1  
+  <br>© 2025 All Rights Reserved
+</footer>
+
+</body>
+</html>
